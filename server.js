@@ -5,6 +5,7 @@ if (process.env.NODE_ENV !== 'production') {
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const indexRouter = require('./routes/index');
+const authorsRouter = require('./routes/authors');
 
 
 const app = express();
@@ -27,5 +28,6 @@ app.use(express.static('public'));
 
 
 app.use('/', indexRouter);
+app.use('/authors', authorsRouter);
 
 app.listen(process.env.PORT || 3000);
